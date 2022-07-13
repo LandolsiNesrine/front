@@ -1,0 +1,20 @@
+export const regex = {
+  url: () =>
+    /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/g,
+  arabicInput: () => /^[\u0621-\u064A.0-9-/+*| ]+$/,
+  frinput: () => /^[a-zA-ZÀ-ÿ-.*-|/0-9 ]*$/,
+  Caractinput: () => /^[a-zA-ZÀ-ÿ \u0621-\u064A\s_]*$/,
+  schoolyear: () => /^\d{4}.\d{4}$/,
+  isnumber: () => /\d/,
+  isphoneNumber: () => /^\(?[\d]{2}\)?[\s-]?[\d]{3}[\s-]?[\d]{3}$/,
+  min8: () => /.{8,}/,
+  minCode10: () => /^[\s\S]{0,11}$/,
+  SpecialCarc: () => /\W|_/g,
+  Maj: () => /[A-Z]/,
+  minusucle: () => /[a-z]/,
+  email: () => /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
+  cin: () => /^[0-9]{8}$/,
+  matricule: () => /^.{1,7}$/,
+  month: () => /^([\d]|1[0-2])$/,
+  yearnum: () => /^(19|[2-9][0-9])\d{2}$/,
+};

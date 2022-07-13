@@ -1,0 +1,15 @@
+<ng-container *ngIf="isEmpty">
+    <mat-card [style]="withoutBorder ? 'border: none' : undefined" appCard class="mat-elevation-z0">
+        <mat-card-content class="cpb5" fxLayout="column wrap" fxLayoutAlign="center center">
+            <div>
+                <img src="/assets/images/icons/note.png" style="width: 64px; height: 64px; display: block; margin-left: auto; margin-right: auto;"/>
+            </div>
+            <h3 style="line-height: 1; text-align: center; font-weight: bold; color: #134563;">
+                    {{ 'common.table.empty' | translate }}
+            </h3>
+        </mat-card-content>
+    </mat-card>
+</ng-container>
+<ng-container *ngIf="isNotEmpty">
+    <ng-content></ng-content>
+</ng-container>

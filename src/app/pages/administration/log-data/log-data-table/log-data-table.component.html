@@ -1,0 +1,64 @@
+<table (matSortChange)="onSortChange($event)" [dataSource]="dataSource" mat-table matSort style="width: 100%">
+
+    <ng-container matColumnDef="fullName">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header width="15%">
+            Full name
+        </th>
+        <td width="15%" style="text-align: center;" *matCellDef="let obj" mat-cell>
+            {{ obj.fullName }}
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="libelleAdmProfile" width="15%">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>
+            Profile
+        </th>
+        <td width="15%" style="text-align: center;" *matCellDef="let obj" mat-cell>
+            {{obj.libelleAdmProfile}}
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="libelleAdmProfileAr" width="15%">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>
+            Profile
+        </th>
+        <td width="15%" style="text-align: center;" *matCellDef="let obj" mat-cell>
+            {{obj.libelleAdmProfileAr}}
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="libelleAdmProfileEn" width="15%">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>
+            Profile
+        </th>
+        <td width="15%" style="text-align: center;" *matCellDef="let obj" mat-cell>
+            {{obj.libelleAdmProfileEn}}
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="ipAddress">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: 10%;"> Ip address </th>
+        <td mat-cell *matCellDef="let obj"> {{obj.ipAddress}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="uri">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: 15%;"> Uri </th>
+        <td mat-cell *matCellDef="let obj"> {{obj.uri}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="resultWs">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: 5%;"> Result </th>
+        <td mat-cell *matCellDef="let obj"> {{obj.resultWs}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="dateLog">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: 12%;"> Date </th>
+        <td mat-cell *matCellDef="let obj"> {{obj.dateLog | date: (getLang() !='ar' ? 'dd-MM-yyyy HH:mm:ss' : 'HH:mm:ss
+            yyyy-MM-dd')}} </td>
+    </ng-container>
+
+    <tr *matHeaderRowDef="getCol()" mat-header-row></tr>
+    <tr *matRowDef="let row; columns: getCol()" mat-row></tr>
+</table>
+
+<app-empty-list [list]="dataSource.data" [withoutBorder]="true"></app-empty-list>

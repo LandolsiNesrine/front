@@ -1,0 +1,18 @@
+export const CONSTANTE_SQL = {
+    EQUALS: '=',
+    DIFFERENCE: '!=',
+    LIKE: 'like',
+    NOT_LIKE: 'not_like',
+    IN: 'in',
+    BETWEEN: 'between',
+    SUPERIOR: '>',
+    SUPERIOR_EQUALS: '>=',
+    INFERIOR: '<',
+    INFERIOR_EQUALS: '<=',
+    UPPER: 'upper',
+    UPPER_DIFFERENCE: 'upper_diff',
+    UPPER_LIKE: 'upper_like',
+    UPPER_NOT_LIKE: 'upper_not_like',
+    ASC: 'asc',
+    DESC: 'desc',
+};

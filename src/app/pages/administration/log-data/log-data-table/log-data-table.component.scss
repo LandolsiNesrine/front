@@ -1,0 +1,8 @@
+.center-text{
+    text-align: center !important;
+}
+
+::ng-deep .mat-sort-header-container {
+   display:flex !important;
+   justify-content:center !important;
+}

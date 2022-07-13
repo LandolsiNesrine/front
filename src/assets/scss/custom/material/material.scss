@@ -1,0 +1,45 @@
+
+.panel-search {
+    background: rgba(0,0,0,.03);
+}
+
+tr {
+  height: 40px !important;
+}
+
+th.mat-header-cell {
+  background-color: #2a3042;
+  color: #ffffff !important;
+}
+
+th.mat-header-cell, td.mat-cell {
+  /* row padding */
+  padding: 5px;
+  /* row border */
+  border: solid 1px rgba(0, 0, 0, 0.12);
+  border-top: 0;
+}
+
+table {
+  border-radius: 0 0 10px 10px !important;
+
+  /* row spacing / margin */
+  border-spacing: 0 8px !important;
+}
+
+.table-paginator {
+  border-radius: 0 0 10px 10px !important;
+}
+
+.mat-sort-header-arrow {
+  color: white !important;
+}
+
+.table-card {
+  padding: 0 !important;
+}
+
+::ng-deep .mat-sort-header-container {
+  display: flex !important;
+  justify-content: center !important;
+}

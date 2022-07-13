@@ -1,0 +1,16 @@
+<app-page-title title="{{'log-data.table.title' | translate}}" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+
+<div class="cp5" fxLayout="row wrap">
+    <div fxFlex="100" fxFlex.lt-md="100">
+        <app-log-data-filtre (search)="onSearch($event)"></app-log-data-filtre>
+    </div>
+    <br>
+    <div fxFlex="100" fxFlex.lt-md="100">
+        <mat-card class="table-card" appCard>
+            <mat-card-content>
+                <app-log-data-table [list]="data" (sort)="onSort($event)"></app-log-data-table>
+                <app-paginator (paginate)="onPaginate($event)" [total]="totalCount"></app-paginator>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

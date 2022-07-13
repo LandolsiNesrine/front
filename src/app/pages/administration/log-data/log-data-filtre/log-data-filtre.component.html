@@ -1,0 +1,41 @@
+<mat-expansion-panel>
+    <mat-expansion-panel-header class="panel-search">
+        <mat-panel-title>
+            <mat-icon>search</mat-icon>{{'common.title.search' | translate}}
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+    <br />
+    <div class="container-fluid">
+        <form (ngSubmit)="onSearch()" [formGroup]="form">
+            <div class="row">
+                <div fxFlex="25" fxFlex.lt-md="100">
+                    <mat-form-field appearance="outline">
+                        <mat-label>{{'log-data.filtre.admProfile' |translate }}</mat-label>
+                        <mat-select formControlName="idAdmProfile">
+                            <mat-option [value]="">{{'common.input.item' | translate}}</mat-option>
+                            <mat-option *ngFor="let obj of listAdmProfile" [value]="obj.idAdmProfile">
+                                {{ obj.libelleAdmProfile }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+
+
+            <div class="cp5" fxLayout="row wrap" fxLayoutAlign="end end">
+                <div>
+                    <button color="primary" mat-flat-button type="submit">
+                        <mat-icon>search</mat-icon>
+                        <span>{{'common.btn.search' | translate}}</span>
+                    </button>
+
+                    <button style="margin:5px;" (click)="reset()" color="primary" mat-flat-button type="button">
+                        <mat-icon>autorenew</mat-icon>
+                        <span>{{'common.btn.reset' | translate}}</span>
+                    </button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</mat-expansion-panel>
