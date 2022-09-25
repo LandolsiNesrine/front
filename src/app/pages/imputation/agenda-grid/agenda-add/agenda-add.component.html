@@ -1,0 +1,121 @@
+<form [formGroup]="form">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title> User Information </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div *ngIf="alert" class="{{ typealert }}" role="alert">
+          {{ alertmsg }}
+          <span>
+            <button (click)="closeAlert()" class="closebttn" mat-icon-button>
+              <mat-icon>clear</mat-icon>
+            </button>
+          </span>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field appearance="outline">
+            <mat-label> Project </mat-label>
+            <mat-select formControlName="nameProject">
+              <mat-option *ngFor="let choice of projectlist" [value]="choice">
+                {{ choice }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field appearance="outline">
+            <mat-label> refProject </mat-label>
+            <mat-select formControlName="refProject">
+              <mat-option *ngFor="let choice of projectref" [value]="choice">
+                {{ choice }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field appearance="outline">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker3" formControlName="jour" />
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker3">
+              <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker3></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field appearance="outline">
+            <mat-label> Tache</mat-label>
+            <mat-select formControlName="tache">
+              <mat-option *ngFor="let choice of tachelist" [value]="choice">
+                {{ choice }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="col-sm-6">
+          <mat-form-field appearance="outline">
+            <mat-label>heure_debut</mat-label>
+            <input
+              matInput
+              formControlName="heure_debut"
+              [ngxTimepicker]="picker"
+            />
+            <ngx-material-timepicker #picker></ngx-material-timepicker>
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field appearance="outline">
+            <mat-label>heure_fin</mat-label>
+            <input
+              matInput
+              formControlName="heure_fin"
+              [ngxTimepicker]="picker2"
+            />
+            <ngx-material-timepicker #picker2></ngx-material-timepicker>
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field appearance="outline">
+            <mat-label>Leave a comment</mat-label>
+            <textarea
+              matInput
+              placeholder="commentaire"
+              formControlName="commentaire"
+            ></textarea>
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-list>
+            <mat-list-item>{{ val }} minutes</mat-list-item>
+            <mat-divider></mat-divider>
+          </mat-list>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button
+        (click)="validate()"
+        color="primary"
+        mat-flat-button
+        type="submit"
+      >
+        <mat-icon>search</mat-icon>
+        <span>validate</span>
+      </button>
+
+      <button
+        style="margin: 5px"
+        (click)="reset()"
+        color="primary"
+        mat-flat-button
+        type="button"
+      >
+        <mat-icon>autorenew</mat-icon>
+        <span> reset</span>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</form>

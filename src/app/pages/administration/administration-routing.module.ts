@@ -16,10 +16,7 @@ const routes: Routes = [{
     { path: 'accessData', component: LogAccessComponent },
     {
       path: 'profile', component: ProfileComponent,
-      children: [
-        { path: 'add', component: ProfileAddComponent },
-        { path: 'edit/:id', component: ProfileEditComponent },
-      ]
+      
     },
     {
       path: 'users', component: UsersComponent,
@@ -27,7 +24,8 @@ const routes: Routes = [{
         { path: 'add', component: UsersAddComponent },
         { path: 'edit/:id', component: UsersEditComponent },
       ]
-    }
+    },
+    
   ],
 }];
 

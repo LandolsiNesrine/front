@@ -1,0 +1,28 @@
+<app-page-title
+  title="{{ 'Imputation' | translate }}"
+  [breadcrumbItems]="breadCrumbItems"
+></app-page-title>
+    <app-agenda-add></app-agenda-add>
+    <div fxFlex="100" fxFlex.lt-md="100">
+      <mat-card class="table-card" appCard>
+        <mat-card-content>
+          <app-agenda-table
+            [list]="data"
+            (alertbo)="newalert($event)"
+          ></app-agenda-table>
+
+          <app-paginator
+            (paginate)="onPaginate($event)"
+            [total]="totalCount"
+          ></app-paginator>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div *ngIf="alert" class="{{ typealert }}" role="alert">
+      {{ alertmsg }}
+      <span>
+        <button (click)="closeAlert()" class="closebttn" mat-icon-button>
+          <mat-icon>clear</mat-icon>
+        </button>
+      </span>
+    </div>

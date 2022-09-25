@@ -1,0 +1,42 @@
+<div class="header">
+  <h2 mat-dialog-title>Project Information</h2>
+  <button mat-icon-button [mat-dialog-close]="false">
+    <mat-icon style="color: red">close</mat-icon>
+  </button>
+</div>
+<div class="card-body">
+  <div class="table-responsive">
+    <table class="table table-nowrap mb-0">
+      <tbody>
+        <tr>
+          <th scope="row">Project Name:</th>
+          <td>{{ obj.nameProject }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Project reference :</th>
+          <td>{{ obj.refProject }}</td>
+        </tr>
+        <tr>
+          <th scope="row">cost :</th>
+          <td>{{ obj.cost }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Price :</th>
+          <td>{{ obj.price }}</td>
+        </tr>
+        <tr>
+          <th scope="row">StartDate :</th>
+          <td>{{ obj.startDate }}</td>
+        </tr>
+        <tr>
+          <th scope="row">endDate :</th>
+          <td>{{ obj.endDate }}</td>
+        </tr>
+        <tr>
+          <th scope="row">State :</th>
+          <td>{{ obj.state }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

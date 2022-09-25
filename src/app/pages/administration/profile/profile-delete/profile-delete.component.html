@@ -1,1 +1,13 @@
-<p>profile-delete works!</p>
+<div class="header">
+    <h2 mat-dialog-title>Confirmation</h2>
+    <button mat-icon-button [mat-dialog-close]="false">
+        <mat-icon>close</mat-icon>
+    </button>
+</div>
+<div mat-dialog-content>Are you sure to delete this profile ?</div>
+<div mat-dialog-action [align]="'end'">
+    <button mat-raised-button [mat-dialog-close]="false">NO</button>
+    <button mat-raised-button (click)=" deteleProfile()"  color="primary"[mat-dialog-close]="true">YES</button>
+    
+</div>
+   

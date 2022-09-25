@@ -1,0 +1,75 @@
+<div *ngIf="alert" class="{{ typealert }}" role="alert">
+  {{ alertmsg }}
+  <span>
+    <button (click)="closeAlert()" class="closebttn" mat-icon-button>
+      <mat-icon>clear</mat-icon>
+    </button>
+  </span>
+</div>
+<form [formGroup]="form">
+  <div class="container-fluid">
+    <mat-form-field appearance="outline">
+      <mat-label> Project reference </mat-label>
+      <input matInput formControlName="refProject" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label> Project Name </mat-label>
+      <input matInput formControlName="nameProject" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label> StartDate</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="startDate" />
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label> EndDate</mat-label>
+      <input matInput [matDatepicker]="picker1" formControlName="endDate" />
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label> Price </mat-label>
+      <input type="number" matInput formControlName="price" />
+      <span matPrefix>$&nbsp;</span>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label> Cost</mat-label>
+      <input matInput formControlName="cost" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label> State</mat-label>
+      <mat-select formControlName="state">
+        <mat-option *ngFor="let choice of choicelist" [value]="choice">
+          {{ choice }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</form>
+
+<div class="cp5">
+  <div>
+    <button (click)="validate()" color="primary" mat-flat-button type="submit">
+      <mat-icon>search</mat-icon>
+      <span>validate</span>
+    </button>
+
+    <button
+      style="margin: 5px"
+      (click)="reset()"
+      color="primary"
+      mat-flat-button
+      type="button"
+    >
+      <mat-icon>autorenew</mat-icon>
+      <span> reset</span>
+    </button>
+  </div>
+</div>

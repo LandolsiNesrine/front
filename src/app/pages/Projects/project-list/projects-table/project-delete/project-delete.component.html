@@ -1,0 +1,13 @@
+<div class="header">
+  <h2 mat-dialog-title>Confimation</h2>
+  <button mat-icon-button [mat-dialog-close]="false">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+<div mat-dialog-content>
+  Are you sure to delete this project ?
+</div>
+<div mat-dialog-action [align]="'end'">
+  <button mat-raised-button [mat-dialog-close]="false"> NO </button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="true" (click)="delete()"> YES</button>
+</div>

@@ -24,6 +24,13 @@ export class AccountService {
 
     public whoiam() {
         return this.http.get(`${CONSTANTE_ACCOUNT_URL.WHOIAM}`);
+        
     }
+    public myProjects(): Observable<Object>{
+
+        return this.http.get(`${CONSTANTE_ACCOUNT_URL.PROJECTS}`);
+    }
+    
+    
 
 }

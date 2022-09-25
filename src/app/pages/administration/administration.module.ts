@@ -24,6 +24,8 @@ import { ProfileAddComponent } from './profile/profile-add/profile-add.component
 import { ProfileEditComponent } from './profile/profile-edit/profile-edit.component';
 import { ProfileDeleteComponent } from './profile/profile-delete/profile-delete.component';
 import { UIModule } from 'src/app/shared/ui/ui.module';
+import { LogDataProfileComponent } from './log-data-profile/log-data-profile.component';
+
 
 @NgModule({
   declarations: [
@@ -45,6 +47,7 @@ import { UIModule } from 'src/app/shared/ui/ui.module';
     ProfileAddComponent,
     ProfileEditComponent,
     ProfileDeleteComponent,
+    LogDataProfileComponent
   ],
   imports: [
     CommonModule,

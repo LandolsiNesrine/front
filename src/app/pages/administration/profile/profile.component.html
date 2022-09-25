@@ -1,1 +1,28 @@
-<p>profile works!</p>
+<app-page-title title="Profile" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+
+<div class="cp5" fxLayout="row wrap">
+    <div fxFlex="100" fxFlex.lt-md="100">
+        <mat-card class="table-card" appCard>
+        <span>
+            <button (click)="openDialog()" mat-flat-button type="button">Ajouter</button>
+        </span>
+            <mat-card-content>
+                <app-profile-table [list]="data" (sort)="onSort($event)" (msg)="newalert($event)"></app-profile-table>         
+                <app-paginator (paginate)="onPaginate($event)" [total]="totalCount"></app-paginator>       
+                <div  *ngIf="alert" class="alert alert-success" role="alert" >
+                    Profil supprimé avec succès! 
+                        <button (click)="closeAlert()" class="closebttn" data-dismiss="alert" aria-label="Close" mat-icon-button>
+                          <mat-icon>clear</mat-icon>
+                        </button>
+                </div>
+                <div class="alert alert-danger" *ngIf!="alert" role="alert" >
+                    Erreur de supression! 
+                        <button (click)="closeAlert()" class="closebttn" data-dismiss="alert" aria-label="Close" mat-icon-button>
+                          <mat-icon>clear</mat-icon>
+                        </button>
+                      
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

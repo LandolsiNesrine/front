@@ -45,4 +45,15 @@ export class AdministrationService {
     public getListAccessDataByIdAdmUser(searchObject: Object, idAdmUser): Observable<Object> {
         return this.http.post(`${CONSTANTE_ADMINISTRATION_URL.ACCESS_DATA_USER}` + '/' + idAdmUser + '', searchObject);
     }
-}
+    public getListProfile(): Observable<Object> {
+        return this.http.get(`${CONSTANTE_ADMINISTRATION_URL.PROFILE}`);
+    }
+    public pushProfile(profileForm: Object): Observable<Object> {
+        return this.http.post(`${CONSTANTE_ADMINISTRATION_URL.PROFILE}`, profileForm);
+    }
+    public putProfile(profileForm: Object): Observable<Object> {
+        return this.http.put(`${CONSTANTE_ADMINISTRATION_URL.PROFIL}`, profileForm);
+    }
+    public deleteprofile(idAdmProfile: String) {
+        return this.http.delete(`${CONSTANTE_ADMINISTRATION_URL.PROFIL}` + '/' + idAdmProfile + '');
+} }

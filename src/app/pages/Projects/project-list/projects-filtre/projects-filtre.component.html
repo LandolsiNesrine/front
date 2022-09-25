@@ -1,0 +1,60 @@
+<mat-expansion-panel>
+  <mat-expansion-panel-header class="panel-search">
+      <mat-panel-title>
+          <mat-icon>search</mat-icon>{{'common.title.search' | translate}}
+      </mat-panel-title>
+  </mat-expansion-panel-header>
+  <br />
+  <div class="container-fluid" >
+      <form [formGroup]="form">
+          <div class="row" >
+              <div fxFlex="25" fxFlex.lt-md="100" >
+                  <mat-form-field appearance="outline" >
+                      <mat-label> Project Name </mat-label>
+                        <input matInput formControlName="nameProject">
+                  </mat-form-field>
+                  <mat-form-field appearance="outline">
+                    <mat-label> Project Reference </mat-label>
+                      <input matInput formControlName="refProject">
+                </mat-form-field>
+<br/>
+                <mat-form-field appearance="outline">
+                  <mat-label>Choose a date</mat-label>
+                  <input matInput [matDatepicker]="picker" formControlName="endDate">
+                  <mat-hint>MM/DD/YYYY</mat-hint>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                  <mat-label> State</mat-label>
+                  <mat-select formControlName="state">
+                    <mat-option
+                      *ngFor="let choice of choicelist"
+                      [value]="choice"
+                    >
+                      {{ choice }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+
+
+              </div>
+          </div>
+
+
+          <div class="cp5" fxLayout="row wrap" fxLayoutAlign="end end">
+              <div>
+                  <button color="primary" mat-flat-button (click)="onSearch()" type="submit">
+                      <mat-icon>search</mat-icon>
+                      <span>{{'common.btn.search' | translate}}</span>
+                  </button>
+
+                  <button style="margin:5px;" (click)="reset()" color="primary" mat-flat-button type="button">
+                      <mat-icon>autorenew</mat-icon>
+                      <span>{{'common.btn.reset' | translate}}</span>
+                  </button>
+              </div>
+          </div>
+      </form>
+
+  </div>
+</mat-expansion-panel>

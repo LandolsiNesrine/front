@@ -1,0 +1,68 @@
+.center-text {
+  text-align: center !important;
+}
+
+::ng-deep .mat-sort-header-container {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+//displayedColumns: string[] =  "refProject","nameProject", "jour","heure_debut","commentaire","tache","nbh", "actions",];
+
+.mat-column-actions {
+  width: 10% !important;
+  padding: 0 2px !important;
+  text-align: center !important;
+
+}
+
+.mat-column-refProject {
+  width: 10% !important;
+  padding: 0 2px !important;
+}
+
+.mat-column-nameProject {
+  width:10% !important;
+  padding: 0 2px !important;
+  text-align: center !important;
+}
+
+.mat-column-jour {
+  width: 5% !important;
+  text-align: right !important;
+  padding: 0 2px !important;
+}
+
+.mat-column-tache {
+  width: 10% !important;
+  text-align: left !important;
+  padding: 0 2px !important;
+}
+
+.mat-column-commentaire {
+  width: 10% !important;
+  text-align: left !important;
+  padding: 0 2px !important;
+}
+
+.mat-column-jour {
+  text-align: left !important;
+  width: 6% !important;
+  padding: 0 2px !important;
+}
+.mat-column-heure_debut {
+  text-align: left !important;
+  width: 6% !important;
+  padding: 0 2px !important;
+}
+.mat-column-heure_fin {
+  text-align: left !important;
+  width: 6% !important;
+  padding: 0 2px !important;
+}
+.mat-column-nbh {
+  text-align: left !important;
+  width: 6% !important;
+  padding: 0 2px !important;
+}
+

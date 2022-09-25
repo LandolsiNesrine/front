@@ -1,0 +1,60 @@
+.center-text {
+  text-align: center !important;
+}
+
+::ng-deep .mat-sort-header-container {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+// displayedColumns: string[] = ['codeProject', 'nameProject', 'startDate', 'endDate', 'price', 'cost','state','actions
+
+.mat-column-actions {
+  width: 10% !important;
+  padding: 0 2px !important;
+  text-align: center !important;
+
+}
+
+.mat-column-refProject {
+  width: 10% !important;
+  padding: 0 2px !important;
+}
+
+.mat-column-nameProject {
+  width: 5% !important;
+  padding: 0 2px !important;
+  text-align: center !important;
+}
+
+.mat-column-price {
+  width: 5% !important;
+  text-align: right !important;
+  padding: 0 2px !important;
+}
+
+.mat-column-cost {
+  width: 5% !important;
+  text-align: right !important;
+  padding: 0 2px !important;
+}
+
+.mat-column-state {
+  width: 6% !important;
+  text-align: left !important;
+  padding: 0 2px !important;
+}
+
+.mat-column-startDate {
+  text-align: left !important;
+  width: 6% !important;
+}
+
+.mat-column-endDate {
+  text-align: left !important;
+  width: 6% !important;
+}
+.mat-column-nbh {
+  text-align: left !important;
+  width: 6% !important;
+}

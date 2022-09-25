@@ -1,0 +1,46 @@
+<div class="header">
+  <h2 mat-dialog-title>Details</h2>
+  <button mat-icon-button [mat-dialog-close]="false">
+    <mat-icon style="color: red">close</mat-icon>
+  </button>
+</div>
+<div class="card-body">
+  <div class="table-responsive">
+    <table class="table table-nowrap mb-0">
+      <tbody>
+        <tr>
+          <th scope="row">Project Name:</th>
+          <td>{{ obj.nameProject }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Project reference :</th>
+          <td>{{ obj.refProject }}</td>
+        </tr>
+        <tr>
+          <th scope="row">jour :</th>
+          <td>{{ obj.jour |  date:  'dd-MM-yyyy'}}</td>
+        </tr>
+        <tr>
+          <th scope="row">heure_debut :</th>
+          <td>{{ obj.heure_debut}}</td>
+        </tr>
+        <tr>
+          <th scope="row">heure_fin :</th>
+          <td>{{ obj.heure_fin }}</td>
+        </tr>
+        <tr>
+          <th scope="row">nombre d'heures :</th>
+          <td>{{ obj.nbh }} minutes</td>
+        </tr>
+        <tr>
+          <th scope="row">tache :</th>
+          <td>{{ obj.tache }}</td>
+        </tr>
+        <tr>
+        <th scope="row">commentaire :</th>
+        <td>{{ obj.commentaire }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -11,5 +11,8 @@ export const CONSTANTE_ADMINISTRATION_URL = {
 
     USERS: `${url}/administration/users`,
     USER: `${url}/administration/user`,
+    PROFILE: `${url}/administration/profile`,
+    PROFIL: `${url}/administration/profil`,
+
 
 };

@@ -1,1 +1,35 @@
-<p>profile-add works!</p>
+<h1 mat-dialog-title>Ajouter un profil</h1>
+<div class={{typealert}} *ngIf="alert" role="alert" >
+    {{msg}}
+        <button (click)="closeAlert()" class="closebttn" data-dismiss="alert" aria-label="Close" mat-icon-button>
+          <mat-icon>clear</mat-icon>
+        </button>
+</div>
+<div mat-dialog-content>
+<form [formGroup]="profileForm">
+    <mat-form-field appearance="outline">
+        <mat-label>Code</mat-label>
+        <input formControlName="codeAdmProfile" matInput placeholder="Code">
+      </mat-form-field>
+<mat-form-field appearance="outline">
+        <mat-label>Libelle</mat-label>
+        <input formControlName="libelleAdmProfile" matInput placeholder="Libelle">
+    </mat-form-field>
+<mat-form-field appearance="outline">
+        <mat-label>role</mat-label>
+        <input formControlName="role" matInput placeholder="Code">
+    </mat-form-field>
+<mat-form-field appearance="outline">
+        <mat-label>Libelle Ar</mat-label>
+        <input formControlName="libelleAdmProfileAr" matInput placeholder="Libelle Ar">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Libelle En</mat-label>
+        <input formControlName="libelleAdmProfileEn"  matInput placeholder="Libelle En">
+    </mat-form-field>
+</form>
+<div mat-dialog-action [align]="'end'"></div>
+<button mat-raised-button color="warn" mat-dialog-close>Fermer</button>
+<button style="margin-left:8px" mat-raised-button color="primary" (click)="addProfil()" >{{actionBtn}}</button>
+
+</div>

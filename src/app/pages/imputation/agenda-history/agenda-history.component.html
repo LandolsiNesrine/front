@@ -1,0 +1,48 @@
+<app-page-title
+  title="{{ 'Historique' | translate }}"
+  [breadcrumbItems]="breadCrumbItems"
+></app-page-title>
+
+<div class="cp5" fxLayout="row wrap">
+  <div fxFlex="100" fxFlex.lt-md="100">
+    <app-agenda-filtre (searchoptions)="onSearch($event)"></app-agenda-filtre>
+    <span>
+      <button
+        color="primary"
+        (click)="addtrace()"
+        mat-flat-button
+        type="button"
+      >
+        Ajout tache
+      </button>
+    </span>
+  </div>
+
+  <br />
+  <br />
+  <br />
+
+  <div fxFlex="100" fxFlex.lt-md="100">
+    <mat-card class="table-card" appCard>
+      <mat-card-content>
+        <app-agenda-table
+          [list]="data"
+          (alertbo)="newalert($event)"
+        ></app-agenda-table>
+
+        <app-paginator
+          (paginate)="onPaginate($event)"
+          [total]="totalCount"
+        ></app-paginator>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div *ngIf="alert" class="{{ typealert }}" role="alert">
+    {{ alertmsg }}
+    <span>
+      <button (click)="closeAlert()" class="closebttn" mat-icon-button>
+        <mat-icon>clear</mat-icon>
+      </button>
+    </span>
+  </div>
+</div>
